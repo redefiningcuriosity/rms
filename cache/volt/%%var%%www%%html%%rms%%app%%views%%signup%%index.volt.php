@@ -1,6 +1,6 @@
 <html>
 <center>
-	<form method="post" action="signup/adduser">
+	<form method="post" action="signup">
 	<input type="text" name="fname" placeholder="Enter your first name">
 	<input type="text" name="lname" placeholder="Enter your last name">
 	<input type="email" name="email" placeholder="Enter your email">
