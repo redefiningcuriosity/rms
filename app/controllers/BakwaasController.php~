@@ -1,0 +1,22 @@
+<?php
+
+class BakwaasController extends ControllerBase
+{
+
+ public function initialize()
+    {
+        $this->tag->setTitle('Bakwaas');
+        parent::initialize();
+    }
+
+    public function indexAction()
+    {
+	echo "Bakwaaas!!";
+    }
+
+public function bakbakAction()
+    {
+	echo "Bakbak!!";
+    }
+}
+

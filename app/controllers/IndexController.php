@@ -1,0 +1,22 @@
+<?php
+
+class IndexController extends ControllerBase
+{
+
+ public function initialize()
+    {
+        $this->tag->setTitle('Welcome');
+        parent::initialize();
+    }
+
+    public function indexAction()
+    {
+	echo "Hulala!!";
+    }
+
+public function indAction()
+    {
+	echo "Hulalalalalala!!";
+    }
+}
+

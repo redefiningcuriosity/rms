@@ -1,0 +1,20 @@
+[database]
+adapter  = Mysql
+host     = localhost
+username = root
+password = chirag
+name     = rms
+
+[application]
+controllersDir = app/controllers/
+modelsDir      = app/models/
+viewsDir       = app/views/
+formsDir       = app/forms/
+baseUri        = /rms/
+
+[mandrill]
+apikey		= 9yH3j06cpDYo4f0LEJ0QMg
+mandrillDir	= mandrillapi/src/
+
+[yodlee]
+yodleeDir	= yodleeapi/src/
