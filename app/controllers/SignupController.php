@@ -85,10 +85,10 @@ class SignupController extends ControllerBase
 							"fromemail" =>"noreply@chiragresturant.com",
 							"fromname" =>"Chirag Resturant",
 							"trackopen" => true );
-						echo "hello";
+						//echo "hello";
 						$mandrill = new MandrillController();
 						$mandrill->sendAction($msg);
-						echo "chillo";
+						//echo "chillo";
 					}
 				}
 				else
@@ -104,23 +104,23 @@ class SignupController extends ControllerBase
 	}
 
 	//user confirms email address by clicking on the link in his email address 
-	public function confirmAction($u_id,$u_reset)
+	public function confirmAction($uid,$u_reset)
 	{
-		if($u_id == NULL || $u_reset==NULL)
+		if($uid == NULL || $u_reset==NULL)
 		{
 			return $this->response->redirect("404");
 		}
 
 		$user = Userdetails::findFirst(array(
               		  "(u_id = :id:)",
-                	  'bind' => array('email' => $u_id)
+                	  'bind' => array('id' => $uid)
            		 ));
 		if($user->u_reset==$u_reset)
 		{
 			//update user as active.
 			$user->u_reset=NULL;
 			$user->u_active=1;
-			$user-save();
+			$user->save();
 		}
 	}
 }

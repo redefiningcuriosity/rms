@@ -21,6 +21,8 @@ class Userdetails extends Model
 
 	public $u_phno;
 
+	public $u_active;
+
 	public function initialize()
 	{
 	
