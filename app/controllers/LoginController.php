@@ -28,7 +28,7 @@ class LoginController extends ControllerBase
 	if ($this->request->isPost()) {
 
             $email = mb_strtolower($this->request->getPost('email'));
-            $password = $this->request->getPost('password');
+            $password = $this->request->getPost('pass');
             $user = Userdetails::findFirst(array(
                 "(u_email = :email:)",
                 'bind' => array('email' => $email)
@@ -42,7 +42,7 @@ class LoginController extends ControllerBase
 	    
             if ($user2 != false) {
                 $this->_registerSession($user2);
-               return $this->response->redirect('welcome/index');
+               return $this->response->redirect('dashboard');
 
             }
 	}
@@ -50,7 +50,7 @@ class LoginController extends ControllerBase
             $this->flash->error('Wrong email/password');
         }
 
-        header('Location: '.$_SERVER['HTTP_REFERER']);
+        return $this->response->redirect('login');
     }
 
 	
