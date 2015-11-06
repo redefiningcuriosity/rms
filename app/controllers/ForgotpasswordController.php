@@ -58,8 +58,9 @@ class ForgotpasswordController extends ControllerBase
 					$mandrill = new MandrillController();
 					$mandrill->sendAction($msg);
 		}
+		return $this->response->redirect("login");
 	}
-	return $this->response->redirect("login");
+	
     }
 
 	public function setAction($uid,$u_reset)
@@ -75,7 +76,41 @@ class ForgotpasswordController extends ControllerBase
 		{
 			$this->view->ur1=$u_reset;
 			$this->view->ur2=$user->u_reset;
+			$this->view->email=$user->u_email;
 		}
     	}
+
+	public function updateAction()
+    	{
+		if($this->request->isPost())
+		{
+			//Get all posted values from form.
+			$email=$this->request->getPost('email');
+			$reset=$this->request->getPost('reset');
+			$newpass=$this->request->getPost('newpass');
+			$cpass=$this->request->getPost('cpass');
+
+			$user = Userdetails::findFirst(array(
+              		  "(u_email = :id: AND u_reset=:reset:)",
+                	  'bind' => array('id' => $email, 'reset'=>$reset)
+           		 ));
+		
+			if($user!=false)
+			{
+				if($newpass==$cpass)
+				{
+					$user->u_pass=sha1($newpass.$user->u_salt);
+					$user->save();
+					return $this->response->redirect("login");
+				}
+				echo "Wrong password";
+			}
+			else
+			{
+				echo "Chutiya banaega?";
+			}
+		}
+				
+	}
 }
 ?>
