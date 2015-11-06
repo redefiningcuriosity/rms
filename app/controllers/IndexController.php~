@@ -11,7 +11,7 @@ class IndexController extends ControllerBase
 
     public function indexAction()
     {
-	echo "Hulala!!";
+	//echo "Hulala!!";
     }
 
 public function indAction()
