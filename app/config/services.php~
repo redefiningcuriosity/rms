@@ -121,9 +121,9 @@ $di->set('session', function() {
  */
 $di->set('flash', function(){
 	return new FlashSession(array(
-		'error'   => 'err_top_bar',
-		'success' => 'scss_top_bar',
-		'notice'  => 'alert alert-info',
+		'error'   => 'alert bg-danger',
+		'success' => 'alert bg-success',
+		'notice'  => 'alert bg-primary',
 	));
 });
 

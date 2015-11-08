@@ -14,8 +14,10 @@ class LoginController extends ControllerBase
 
     private function _registerSession(Userdetails $user)
     {
+//auth is an array.. present in session variable for storing id and email.. can easily be hacked so pass is not stored
         $this->session->set('auth',array(
             'id' => $user->u_id,
+	    'name'=> $user->u_fname;
             'email' => $user->u_email,
         ));
 
@@ -41,7 +43,7 @@ class LoginController extends ControllerBase
 		    ));
 	    
             if ($user2 != false) {
-                $this->_registerSession($user2);
+                $this->_registerSession($user2);  //// session variable
                return $this->response->redirect('dashboard');
 
             }
