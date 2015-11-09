@@ -8,8 +8,11 @@
 		</div><!--/.row-->
 		
 		<div class="row">
-			<div class="col-lg-12">
+			<div class="col-lg-6">
 				<h1 class="page-header">Menu</h1>
+			</div>
+			<div class="col-lg-6" style=" text-align: right">
+				<h1><a class="btn btn-primary" href="http://localhost/rms/menu/add">Add Item</a></h1>
 			</div>
 		</div><!--/.row-->
 		<div class="col-lg-12">

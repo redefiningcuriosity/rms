@@ -7,31 +7,17 @@ class MenuController extends ControllerBase
     {
         $this->tag->setTitle('Menu');
 	$this->view->setTemplateAfter('topbar');
-	if($this->session->get('auth')==false)
+	$auth = $this->session->get('auth');
+	if($auth==false)
 		$this->response->redirect('404');
+	else
+		$this->view->name = $auth[name];
         parent::initialize();
     }
 
     public function indexAction()
     {
-	$auth = $this->session->get('auth');
-        $this->view->name = $auth[name];
-	$vegmenudetails=Menudetails::find(
-		    array(
-			"m_category = 'Veg'",
-			"order" => "m_type,m_subtype"
-		    )
-			);
-	$this->view->vegmenu=$vegmenudetails;
 	
-	$nvegmenudetails=Menudetails::find(
-		    array(
-			"m_category = 'NonVeg'",
-			"order" => "m_type,m_subtype"
-		    )
-			);
-	$this->view->nvegmenu=$nvegmenudetails;
-
 	if($this->request->isPost())	
 	{
 		$mname=$this->request->getPost('name');
@@ -53,6 +39,23 @@ class MenuController extends ControllerBase
 		 }
 		return $this->response->redirect('menu');
 	}
+	$vegmenudetails=Menudetails::find(
+		    array(
+			"m_category = 'Veg'",
+			"order" => "m_type,m_subtype"
+		    )
+			);
+	$this->view->vegmenu=$vegmenudetails;
+	
+	$nvegmenudetails=Menudetails::find(
+		    array(
+			"m_category = 'NonVeg'",
+			"order" => "m_type,m_subtype"
+		    )
+			);
+	$this->view->nvegmenu=$nvegmenudetails;
+
+	
     }
 
     public function deleteAction($mid)
@@ -78,7 +81,6 @@ class MenuController extends ControllerBase
     public function editAction($mid)
     {
 	$auth = $this->session->get('auth');
-	$this->view->name = $auth[name];
 	$cid=$auth[id];
 	//echo $cid;
 	if($cid==false)

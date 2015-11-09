@@ -7,9 +7,14 @@ class AdminController extends ControllerBase
     {
         $this->tag->setTitle('Admin');
 	$this->view->setTemplateAfter('topbar');
-	//$this->view->setTemplateAfter('sidebar');
-	if($this->session->get('auth')==false)
+	$auth = $this->session->get('auth');
+	if($auth==false)
 		$this->response->redirect('404');
+	else
+	{
+		$this->view->name = $auth[name];
+		$this->view->conname = "Admin";
+	}
         parent::initialize();
     }
 

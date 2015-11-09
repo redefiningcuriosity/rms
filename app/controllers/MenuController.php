@@ -7,15 +7,20 @@ class MenuController extends ControllerBase
     {
         $this->tag->setTitle('Menu');
 	$this->view->setTemplateAfter('topbar');
-	if($this->session->get('auth')==false)
+	$auth = $this->session->get('auth');
+	if($auth==false)
 		$this->response->redirect('404');
+	else
+	{
+		$this->view->name = $auth[name];
+		$this->view->conname = "Menu";
+	}
         parent::initialize();
     }
 
     public function indexAction()
     {
-	$auth = $this->session->get('auth');
-        $this->view->name = $auth[name];
+	
 	if($this->request->isPost())	
 	{
 		$mname=$this->request->getPost('name');
@@ -79,7 +84,6 @@ class MenuController extends ControllerBase
     public function editAction($mid)
     {
 	$auth = $this->session->get('auth');
-	$this->view->name = $auth[name];
 	$cid=$auth[id];
 	//echo $cid;
 	if($cid==false)

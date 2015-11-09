@@ -29,12 +29,12 @@
 			</div>
 		</form>
 		<ul class="nav menu">
-			<li class="active"><a href="admin"><span class="glyphicon glyphicon-dashboard"></span> Dashboard</a></li>
-			<li><a href="menu"><span class="glyphicon glyphicon-th"></span> Menu</a></li>
-			<li><a href="orders"><span class="glyphicon glyphicon-list-alt"></span> Orders</a></li>
-			<li><a href="sales"><span class="glyphicon glyphicon-stats"></span> Sales</a></li>
-			<li><a href="chefmessagesforms.html"><span class="glyphicon glyphicon-pencil"></span> Messages</a></li>
-			<li><a href="reservations"><span class="glyphicon glyphicon-info-sign"></span> Reservations</a></li>
+			<li <?php if ($conname == 'Admin') { ?> class="active" <?php } ?>><a href="admin"><span class="glyphicon glyphicon-dashboard"></span> Dashboard</a></li>
+			<li <?php if ($conname == 'Menu') { ?> class="active" <?php } ?>><a href="menu"><span class="glyphicon glyphicon-th"></span> Menu</a></li>
+			<li <?php if ($conname == 'Orders') { ?> class="active" <?php } ?>><a href="orders"><span class="glyphicon glyphicon-list-alt"></span> Orders</a></li>
+			<li <?php if ($conname == 'Sales') { ?> class="active" <?php } ?>><a href="sales"><span class="glyphicon glyphicon-stats"></span> Sales</a></li>
+			<li <?php if ($conname == 'Messages') { ?> class="active" <?php } ?>><a href="chefmessagesforms.html"><span class="glyphicon glyphicon-pencil"></span> Messages</a></li>
+			<li <?php if ($conname == 'Reservations') { ?> class="active" <?php } ?>><a href="reservations"><span class="glyphicon glyphicon-info-sign"></span> Reservations</a></li>
 			<li role="presentation" class="divider"></li>
 		</ul>
 	</div><!--/.sidebar-->
