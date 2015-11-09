@@ -1,6 +1,6 @@
 {{ content() }}
 <style>
-#hoverid:hover {do:background-color: #EEE}
+#hoverid:hover {background-color: #EEE;}
 </style>
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">			
 		<div class="row">
@@ -19,20 +19,21 @@
 			<div class="col-xs-12 col-md-6 col-lg-3">
 				
 			</div>
-			<div class="col-xs-24 col-md-12 col-lg-6" id="hoverid" >
-				<div class="panel panel-blue panel-widget nav " >
-				<a href="">
-					<div class="row no-padding">
+			<div class="col-xs-24 col-md-12 col-lg-6"  >
+				<a href="http://localhost/rms/placeorder">
+				<div class="panel panel-blue panel-widget" >
+					<div class="row no-padding" id="hoverid">
 						<div class="col-sm-2 col-lg-2 widget-left">
 							<em class="glyphicon glyphicon-shopping-cart glyphicon-l"></em>
 						</div>
-						<div class="col-sm-9 col-lg-7 widget-right" >
+						<div class="col-sm-16 col-lg-10 widget-right"  id="hoverid">
 							<div class="large">Hungry kya?</div>
 							<div class="text-muted">Place a new order.</div>
 						</div>
 					</div>
-				</a>
+				
 				</div>
+				</a>
 			</div>
 			<div class="col-xs-12 col-md-6 col-lg-3">
 		</div><!--/.row-->
