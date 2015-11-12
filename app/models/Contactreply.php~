@@ -1,0 +1,23 @@
+<?php 
+use Phalcon\Mvc\Model;
+
+class Contactreply extends Model
+{
+	public $co_id;
+
+	public $cr_id;
+
+	public $cr_reply;
+
+	public function initialize()
+	{
+	
+	}
+
+	public function getSource()
+	{
+	return "contactreply";
+	}
+
+}
+?>

@@ -13,6 +13,8 @@ class Contact extends Model
 
 	public $co_message;
 
+	public $co_status;
+
 	public function initialize()
 	{
 	
