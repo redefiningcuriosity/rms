@@ -11,12 +11,19 @@ class IndexController extends ControllerBase
 
     public function indexAction()
     {
-	//echo "Hulala!!";
+	//$this->view->setRenderLevel(View::LEVEL_NO_RENDER);
+	//$this->view->pick("index/index");
+	//echo $this->view->render('index/index');
+	//$this->view->disableLevel(View::LEVEL_LAYOUT);
+
+	$this->view->setRenderLevel(\Phalcon\Mvc\View::LEVEL_ACTION_VIEW);
+        $this->view->render("index", "index");
+        $template = $this->view->getRender('index', 'index', null, function($view) {
+            // $view->setRenderLevel(Phalcon\Mvc\View::LEVEL_MAIN_LAYOUT);
+            $view->setRenderLevel(Phalcon\Mvc\View::LEVEL_ACTION_VIEW);
+        });
+        var_dump($template);
     }
 
-public function indAction()
-    {
-	echo "Hulalalalalala!!";
-    }
 }
-
+?>

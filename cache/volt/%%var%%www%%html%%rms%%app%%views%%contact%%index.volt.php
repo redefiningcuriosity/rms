@@ -42,17 +42,17 @@
 					<div class="panel-heading"><span class="glyphicon glyphicon-envelope"></span> Contact Form</div>
 					<div class="panel-body">
 						<?php echo $this->flash->output(); ?>
-						<form class="form-horizontal" action="http://localhost/rms/contact" method="post">
+						<form class="form-horizontal" action="http://localhost/rms/contact/index" method="post">
 							<fieldset>
 								<!-- Name input-->
 								<div class="form-group">
 									<label class="col-md-3 control-label" for="name">Select the reason of your Query</label>
 									<div class="col-md-9">
 									<select class="form-control" name="reason">
-									    <option val="">Please select one</option>
-									    <option val="cars">Order Related Query</option>
-									    <option val="phones">Reservation of Tables</option>
-									    <option val="names">Bug fixes/Website query</option>
+									    <option value="">Please select one</option>
+									    <option value="Order Related Query">Order Related Query</option>
+									    <option value="Reservation of Tables">Reservation of Tables</option>
+									    <option value="Bug fixes">Bug fixes/Website query</option>
 									</select>
 									</div>
 								</div>

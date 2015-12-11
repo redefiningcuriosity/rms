@@ -4,7 +4,7 @@
 			<div class="login-panel panel panel-default">
 				<div class="panel-heading">Sign up</div>
 				<div class="panel-body">
-					<form role="form" method="post" action="signup">
+					<form role="form" method="post" action="http://localhost/rms/signup">
 						<fieldset>
 							<div class="form-group">
 								<input class="form-control" placeholder="Enter your first name" name="fname" type="text" autofocus="">

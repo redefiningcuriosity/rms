@@ -44,7 +44,7 @@
 											<td><?php echo $msg->u_fname; ?></td>
 											<td><?php echo $msg->co_email; ?></td>
 											<td><?php echo $msg->co_reason; ?></td>
-											<td><?php echo $msg->co_messgage; ?></td>
+											<td><?php echo substr($msg->co_message,0,10)."..."; ?></td>
 											<td><?php echo $this->tag->linkTo(array('cmessages/reply/' . $msg->co_id, '<span class="glyphicon glyphicon-pencil"></span>', 'onclick' => 'return confirm("Do you want to proceed to reply this message?")')); ?></td>
 										</tr>
 									<?php } ?>
@@ -70,7 +70,7 @@
 											<td><?php echo $msg->u_fname; ?></td>
 											<td><?php echo $msg->co_email; ?></td>
 											<td><?php echo $msg->co_reason; ?></td>
-											<td><?php echo $msg->co_messgage; ?></td>
+											<td><?php echo substr($msg->co_message,0,10)."..."; ?></td>
 											<td> Resolved </td>
 										</tr>
 									<?php } ?>

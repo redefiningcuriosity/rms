@@ -8,7 +8,7 @@ class AdminController extends ControllerBase
         $this->tag->setTitle('Admin');
 	$this->view->setTemplateAfter('topbar');
 	$auth = $this->session->get('auth');
-	if($auth==false)
+	if($auth[cid]==false)
 		$this->response->redirect('404');
 	else
 	{

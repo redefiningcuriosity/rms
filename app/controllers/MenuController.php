@@ -8,7 +8,7 @@ class MenuController extends ControllerBase
         $this->tag->setTitle('Menu');
 	$this->view->setTemplateAfter('topbar');
 	$auth = $this->session->get('auth');
-	if($auth==false)
+	if($auth[cid]==false)
 		$this->response->redirect('404');
 	else
 	{
@@ -64,7 +64,7 @@ class MenuController extends ControllerBase
     public function deleteAction($mid)
     {
 	$auth = $this->session->get('auth');
-	$cid=$auth[id];
+	$cid=$auth[cid];
 	if($cid==false)
 		$this->response->redirect("404");
 	else
@@ -84,7 +84,7 @@ class MenuController extends ControllerBase
     public function editAction($mid)
     {
 	$auth = $this->session->get('auth');
-	$cid=$auth[id];
+	$cid=$auth[cid];
 	//echo $cid;
 	if($cid==false)
 		$this->response->redirect("404");

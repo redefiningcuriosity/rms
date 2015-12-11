@@ -122,6 +122,8 @@ class SignupController extends ControllerBase
 			$user->u_active=1;
 			$user->save();
 		}
+		$this->flash->success('<span class="glyphicon glyphicon-info-sign"></span>  Email verified.');
+		$this->response->redirect('login');
 	}
 }
 ?>

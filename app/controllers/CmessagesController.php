@@ -8,7 +8,7 @@ class CmessagesController extends ControllerBase
         $this->tag->setTitle('Messages');
 	$this->view->setTemplateAfter('topbar');
 	$auth = $this->session->get('auth');
-	if($auth==false)
+	if($auth[cid]==false)
 		$this->response->redirect('404');
 	else
 	{

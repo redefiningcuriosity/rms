@@ -16,7 +16,7 @@ class ChefloginController extends ControllerBase
     {
 //auth is an array.. present in session variable for storing id and email.. can easily be hacked so pass is not stored
         $this->session->set('auth',array(
-            'id' => $user->c_id,
+            'cid' => $user->c_id,
 	    'name'=> $user->c_fname,
             'email' => $user->c_email,
         ));

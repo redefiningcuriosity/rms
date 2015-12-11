@@ -8,7 +8,7 @@ class CmessagesController extends ControllerBase
         $this->tag->setTitle('Messages');
 	$this->view->setTemplateAfter('topbar');
 	$auth = $this->session->get('auth');
-	if($auth==false)
+	if($auth[cid]==false)
 		$this->response->redirect('404');
 	else
 	{
@@ -75,6 +75,8 @@ class CmessagesController extends ControllerBase
 		$con=Contact::findFirst("co_id = '$coid'");
 		$con->co_status=1;
 		$con->save();
+
+		$this->response->redirect('cmessages');
 		
 	}
     }

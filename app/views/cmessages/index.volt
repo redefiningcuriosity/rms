@@ -44,7 +44,7 @@
 											<td>{{ msg.u_fname }}</td>
 											<td>{{ msg.co_email }}</td>
 											<td>{{ msg.co_reason }}</td>
-											<td>{{ msg.co_messgage }}</td>
+											<td><?php echo substr($msg->co_message,0,10)."..."; ?></td>
 											<td>{{ link_to('cmessages/reply/' ~msg.co_id, '<span class="glyphicon glyphicon-pencil"></span>', 'onclick': 'return confirm("Do you want to proceed to reply this message?")') }}</td>
 										</tr>
 									{% endfor %}
@@ -70,7 +70,7 @@
 											<td>{{ msg.u_fname }}</td>
 											<td>{{ msg.co_email }}</td>
 											<td>{{ msg.co_reason }}</td>
-											<td>{{ msg.co_messgage }}</td>
+											<td><?php echo substr($msg->co_message,0,10)."..."; ?></td>
 											<td> Resolved </td>
 										</tr>
 									{% endfor %}

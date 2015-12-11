@@ -8,7 +8,7 @@ class DashboardController extends ControllerBase
         $this->tag->setTitle('Dashboard');
 	$this->view->setTemplateAfter('sidebar');
 	$auth = $this->session->get('auth');
-	if($auth==false)
+	if($auth[uid]==false)
 		$this->response->redirect('404');
 	else
 	{

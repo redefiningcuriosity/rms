@@ -16,7 +16,7 @@ class LoginController extends ControllerBase
     {
 //auth is an array.. present in session variable for storing id and email.. can easily be hacked so pass is not stored
         $this->session->set('auth',array(
-            'id' => $user->u_id,
+            'uid' => $user->u_id,
 	    'name'=> $user->u_fname,
             'email' => $user->u_email,
         ));

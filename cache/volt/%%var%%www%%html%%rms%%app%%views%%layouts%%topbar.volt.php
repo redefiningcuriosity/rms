@@ -13,7 +13,6 @@
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> <?php echo $name; ?> <span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
 							<li><a href="adminprofile"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
-							<li><a href="adminsettings"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
 							<li><a href="logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 						</ul>
 					</li>
@@ -34,7 +33,6 @@
 			<li <?php if ($conname == 'Orders') { ?> class="active" <?php } ?>><a href="orders"><span class="glyphicon glyphicon-list-alt"></span> Orders</a></li>
 			<li <?php if ($conname == 'Sales') { ?> class="active" <?php } ?>><a href="sales"><span class="glyphicon glyphicon-stats"></span> Sales</a></li>
 			<li <?php if ($conname == 'Messages') { ?> class="active" <?php } ?>><a href="cmessages"><span class="glyphicon glyphicon-pencil"></span> Messages</a></li>
-			<li <?php if ($conname == 'Reservations') { ?> class="active" <?php } ?>><a href="reservations"><span class="glyphicon glyphicon-info-sign"></span> Reservations</a></li>
 			<li role="presentation" class="divider"></li>
 		</ul>
 	</div><!--/.sidebar-->
