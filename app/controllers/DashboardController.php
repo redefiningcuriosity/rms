@@ -22,6 +22,7 @@ class DashboardController extends ControllerBase
     {
 	$auth = $this->session->get('auth');
         $this->view->name = $auth[name];
+	
     }
 
 }

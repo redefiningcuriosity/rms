@@ -22,19 +22,12 @@ class CordersController extends ControllerBase
     {
 	$auth = $this->session->get('auth');
 	$id=$auth[uid];
-	$vegmenudetails=Orders::find();
-	/*$o=new Order();
-	$o->o_id=1;
-	$o->u_id=2;
-	$o->o_price=10;
-	$o->o_date="2015-12-10";
-	$o->o_transaction=1234;
-	$o->o_payment="visa";
-	$o->o_delivery=0;
-	$o->save();*/
-
-	/*$phql="SELECT * from Orders";
-	$h=$this->modelsManager->executeQuery($phql,array());*/
+	$orders=Orders::find(array(
+			"conditions" => "u_id = :uid:",
+			"bind" => array("uid" => $id),
+			"order" => "o_id DESC"
+			));
+	$this->view->orders=$orders;
     }
 
 }

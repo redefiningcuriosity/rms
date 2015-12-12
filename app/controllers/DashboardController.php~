@@ -22,6 +22,25 @@ class DashboardController extends ControllerBase
     {
 	$auth = $this->session->get('auth');
         $this->view->name = $auth[name];
+	$date=date('Y-m-d');
+
+	$orders = Orders::find("o_delivery = 0");
+	$nosorders = count($orders);
+
+	$contact = Contact::find("co_status = 0");
+	$noscontact = count($contact);
+
+	$users = Userdetails::find();
+	$nosusers = count($users);
+
+	$phql="SELECT SUM(price) AS sumCosts FROM Orders where o_date='$date'";
+	$result = $this->modelsManager->executeQuery($phql);
+	$nossales = $result->sumCosts;
+
+	$this->view->nosorders=$nosorders;
+	$this->view->noscontact=$noscontact;
+	$this->view->nosusers=$nosusers;
+	$this->view->nossales=$nossales;
     }
 
 }

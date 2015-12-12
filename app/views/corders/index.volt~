@@ -50,3 +50,16 @@
 									</tr>
 									</thead>
 									<tbody>
+										{% for order in orders %}
+										<tr>
+											<td>{{ order.o_id }}</td>
+											<td>{{ order.o_price }}</td>
+											<td>{{ order.o_date }}</td>
+											<td>{{ order.o_transaction }}</td>
+											<td>{{ order.o_payment }}</td>
+											<td>{% if order.o_delivery == 1 %} Delivered {% else %} Undelivered {% endif %}</td>
+										</tr>
+									{% endfor %}
+									</tbody>
+								</table>
+							</div>

@@ -1,0 +1,35 @@
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">			
+		<div class="row">
+			<ol class="breadcrumb">
+				<li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+				<li class="active">Place Order</li>
+			</ol>
+		</div><!--/.row-->
+			<div class="col-lg-6">
+				<h1 class="page-header">Review your Order</h1>
+			</div>
+		</div>
+<div class="col-lg-12">
+			<table class="table table-hover">
+				<thead>
+									<tr>
+										<th><div class="th-inner ">Item Name</div><div class="fht-cell"></div></th>
+										<th><div class="th-inner ">Item Price</div><div class="fht-cell"></div></th>
+										<th><div class="th-inner ">Item Type</div><div class="fht-cell"></div></th>
+										<th><div class="th-inner ">Item Subtype</div><div class="fht-cell"></div></th>
+										<th><div class="th-inner ">Item Category</div><div class="fht-cell"></div></th>
+									</tr>
+									</thead>
+									<tbody>
+									{% for veg in orderarray %}
+										<tr>
+											<td>{{ veg.m_name }}</td>
+											<td>{{ veg.m_price }}</td>
+											<td>{{ veg.m_type }}</td>
+											<td>{{ veg.m_subtype }}</td>
+											<td>{{ veg.quant }}</td>
+										</tr>
+									{% endfor %}
+									</tbody>
+								</table>
+							</div>
